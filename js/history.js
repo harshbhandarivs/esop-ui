@@ -4,8 +4,11 @@ const errorMessage = document.querySelector("#errorMessage");
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const { username } = event.target.elements;
-  successMessage.innerHTML = "";
-  errorMessage.innerHTML = "";
+  clearPreviousResponse();
+  getOrderHistory(username);
+});
+
+function getOrderHistory(username) {
   fetch(`http://localhost:8080/user/${username.value}/order`, {
     method: "GET",
     headers: {
@@ -41,7 +44,7 @@ form.addEventListener("submit", (event) => {
     .catch((reason) => {
       appendNetworkError(reason);
     });
-});
+}
 
 function createTable(data) {
   const table = document.createElement("table");
@@ -110,4 +113,9 @@ function appendNetworkError(reason) {
   list.appendChild(listElement);
   list.style.paddingLeft = "16px";
   errorMessage.appendChild(list);
+}
+
+function clearPreviousResponse() {
+  successMessage.innerHTML = "";
+  errorMessage.innerHTML = "";
 }
