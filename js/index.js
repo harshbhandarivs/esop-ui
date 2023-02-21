@@ -27,8 +27,10 @@ form.addEventListener("submit", (event) => {
       const list = document.createElement("ul")
       if (data.error) {
         list.append(
-          data.error.map(element => {
-          return document.createElement("li").innerText = element
+          ...data.error.map(element => {
+          const listElement = document.createElement("li")
+          listElement.innerText = element
+          return listElement
         }));
         errorMessage.appendChild(list);
       } else {
