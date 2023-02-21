@@ -15,7 +15,6 @@ form.addEventListener("submit", (event) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
       const list = document.createElement("ul");
       if (data.error) {
         list.append(
@@ -77,7 +76,6 @@ function createTable(data) {
     const tableRow = document.createElement("tr");
     keys.forEach((key) => {
       const tableRowData = document.createElement("td");
-      console.log(row, row[key]);
       if (row[key] == undefined) {
         tableRowData.innerText = "-";
       } else if (key == "filled") {
@@ -96,7 +94,6 @@ function createFilledList(filled) {
   return filled.map(({ quantity, price }) => {
     const element = document.createElement("p");
     element.innerText = `Quantity: ${quantity} Price: ${price}`;
-    console.log("twicd");
     return element;
   });
 }
