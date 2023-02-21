@@ -1,13 +1,47 @@
 * {
-    font-family: 'Mulish', 'sans-serif';
+  font-family: "Mulish", "sans-serif";
+  margin: 0;
+  padding: 0;
 }
+
+.platform-title-div {
+  background: #715397;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+}
+.submit-button{
+  background-color: #715397;
+  border-radius: 5px;
+  border:none;
+  height: 25px;
+  color: white;
+}
+.platform-title {
+  color: #FFF;
+    font-size: 30px;
+    font-weight: 800;
+}
+.message-div,
+.place-order-div{
+  padding: 30px;
+}
+.platform-title
+{
+  margin: 10px;
+  padding: 5px;
+}
+
 /* #715397 */
 #errorMessage {
   color: rgb(196, 79, 79);
 }
-#esopType{
-    display: none;
+
+#esopType {
+  display: none;
 }
+
 select:has(option:disabled:checked[hidden]) {
   color: gray;
 }
@@ -17,10 +51,14 @@ select option {
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-input, select {
-    margin: 10px;
+input,
+select {
+  margin: 10px;
+  width: 300px;
+  padding: 5px;
+  box-sizing: content-box;
 }

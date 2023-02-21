@@ -1,34 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Title</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-</head>
-<body>
-<h1>Welcome to ESOP Trading Platform</h1>
-<h2>Place your order</h2>
-<form id="form">
-    <input type="text" placeholder="Enter username" id="userName" value="pratik_2">  
-    <select name="orderType" id="orderType">
-        <option value="" disabled selected hidden>Select Order type</option>
-        <option value="BUY">Buy</option>
-        <option value="SELL">Sell</option>
-    </select>
-    <input type="number" min="0" placeholder="Enter quantity" id="quantity" value="10">
-    <input type="number" min="0" placeholder="Enter price" id="price" value="10">
-    <select name="esopType" id="esopType">
-        <option value="" disabled selected hidden>Select ESOP type</option>
-        <option value="NON_PERFORMANCE">NON_PERFORMANCE</option>
-        <option value="PERFORMANCE">PERFORMANCE</option>
-    </select>
-    <input type="submit" value="Place Order" id="submit">
-</form>
-<div id="successMessage"></div>
-<div id="errorMessage"></div>
-<script src="js/index.js"></script>
-</body>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="platform-title-div">
+      <h1 class="platform-title">ESOP Trading Platform</h1>
+    </div>
+    <div class="place-order-div">
+      <h2 class="place-order-title">Place your order</h2>
+      <form id="form">
+        <input
+          type="text"
+          placeholder="Enter username"
+          id="userName"
+          value="pratik_2"
+        />
+        <select name="orderType" id="orderType">
+          <option value="" disabled selected hidden>Select Order type</option>
+          <option value="BUY">Buy</option>
+          <option value="SELL">Sell</option>
+        </select>
+        <input
+          type="number"
+          min="0"
+          placeholder="Enter quantity"
+          id="quantity"
+          value="10"
+        />
+        <input
+          type="number"
+          min="0"
+          placeholder="Enter price"
+          id="price"
+          value="10"
+        />
+        <select name="esopType" id="esopType">
+          <option value="" disabled selected hidden>Select ESOP type</option>
+          <option value="NON_PERFORMANCE">NON_PERFORMANCE</option>
+          <option value="PERFORMANCE">PERFORMANCE</option>
+        </select>
+        <input
+          class="submit-button"
+          type="submit"
+          value="Place Order"
+          id="submit"
+        />
+      </form>
+      <div class="message-div">
+        <div id="successMessage"></div>
+        <div id="errorMessage"></div>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
 </html>
