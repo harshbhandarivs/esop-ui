@@ -9,6 +9,7 @@ form.addEventListener("submit", (event) => {
 });
 
 function getOrderHistory(username) {
+  const url = `http://localhost:8080/user/${username.value}/order`;
   const config = {
     method: "GET",
     headers: {
@@ -16,7 +17,7 @@ function getOrderHistory(username) {
       "Access-Control-Allow-Origin": "*",
     },
   };
-  fetch(`http://localhost:8080/user/${username.value}/order`, config)
+  fetch(url, config)
     .then((response) => response.json())
     .then((data) => {
       if (data.error) {
