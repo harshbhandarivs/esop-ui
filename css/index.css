@@ -1,3 +1,26 @@
+* {
+    font-family: 'Mulish', 'sans-serif';
+}
+/* #715397 */
 #errorMessage {
-    color: rgb(196, 79, 79);
+  color: rgb(196, 79, 79);
+}
+#esopType{
+    display: none;
+}
+select:has(option:disabled:checked[hidden]) {
+  color: gray;
+}
+
+select option {
+  color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, select {
+    margin: 10px;
 }
