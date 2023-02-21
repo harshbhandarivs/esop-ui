@@ -68,7 +68,9 @@ function placeOrder(reqBody,event)
 function appendErrorMessage(list,error)
 {
   const title=document.createElement("p")
-  title.innerText="Errors =>"
+  title.innerText="Errors"
+  title.style.fontWeight=1000
+  title.style.paddingBottom="15px"
   errorMessage.appendChild(title);
   list.append(
     ...error.map(element => {
@@ -76,6 +78,7 @@ function appendErrorMessage(list,error)
     listElement.innerText = element
     return listElement
   }));
+  list.style.paddingLeft="16px"  
   errorMessage.appendChild(list);
 }
 
@@ -83,8 +86,11 @@ function appendOrderSummary(list,data)
 {
   const message=document.createElement("p")
         message.innerText="Order Placed Successfully!!"
+        message.style.fontWeight=1000
+        message.style.paddingBottom="15px"
         const title=document.createElement("p")
-        title.innerText="Order Summary =>"
+        title.innerText="Order Summary"
+        title.style.fontWeight=900
         successMessage.append(message,title);
         for(key in data)
         {
@@ -94,6 +100,7 @@ function appendOrderSummary(list,data)
            listElement.innerText=`${key}: ${data[key]}`
            list.appendChild(listElement)
          }
-        }          
+        }  
+        list.style.paddingLeft="16px"        
         successMessage.appendChild(list); 
 }
