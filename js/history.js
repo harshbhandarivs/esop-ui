@@ -19,16 +19,8 @@ function getOrderHistory(username) {
   fetch(`http://localhost:8080/user/${username.value}/order`, config)
     .then((response) => response.json())
     .then((data) => {
-      const list = document.createElement("ul");
       if (data.error) {
-        list.append(
-          ...data.error.map((element) => {
-            const listElement = document.createElement("li");
-            listElement.innerText = element;
-            return listElement;
-          })
-        );
-        errorMessage.appendChild(list);
+        showErrorMessage(data);
       } else {
         const message = document.createElement("p");
         if (data.length == 0) {
@@ -45,6 +37,18 @@ function getOrderHistory(username) {
     .catch((reason) => {
       appendNetworkError(reason);
     });
+}
+
+function showErrorMessage(data) {
+  const list = document.createElement("ul");
+  list.append(
+    ...data.error.map((element) => {
+      const listElement = document.createElement("li");
+      listElement.innerText = element;
+      return listElement;
+    })
+  );
+  errorMessage.appendChild(list);
 }
 
 function createTable(data) {
