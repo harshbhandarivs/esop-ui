@@ -40,7 +40,7 @@ form.addEventListener("submit", (event) => {
       }
     })
     .catch((reason) => {
-      console.log(reason);
+      appendNetworkError(reason);
     });
 });
 
@@ -99,4 +99,18 @@ function createFilledList(filled) {
     console.log("twicd");
     return element;
   });
+}
+
+function appendNetworkError(reason) {
+  const list = document.createElement("ul");
+  const title = document.createElement("p");
+  title.innerText = "Error";
+  title.style.fontWeight = 900;
+  title.style.paddingBottom = "15px";
+  errorMessage.appendChild(title);
+  const listElement = document.createElement("li");
+  listElement.innerText = reason.message;
+  list.appendChild(listElement);
+  list.style.paddingLeft = "16px";
+  errorMessage.appendChild(list);
 }
