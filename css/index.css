@@ -6,29 +6,28 @@
 
 .platform-title-div {
   background: #715397;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
 }
-.submit-button{
+.submit-button {
   background-color: #715397;
   border-radius: 5px;
-  border:none;
+  border: none;
   height: 25px;
   color: white;
 }
 .platform-title {
-  color: #FFF;
-    font-size: 30px;
-    font-weight: 800;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 800;
 }
 .message-div,
-.place-order-div{
+.place-order-div {
   padding: 30px;
 }
-.platform-title
-{
+.platform-title {
   margin: 10px;
   padding: 5px;
 }
