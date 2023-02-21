@@ -9,13 +9,14 @@ form.addEventListener("submit", (event) => {
 });
 
 function getOrderHistory(username) {
-  fetch(`http://localhost:8080/user/${username.value}/order`, {
+  const config = {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
       "Access-Control-Allow-Origin": "*",
     },
-  })
+  };
+  fetch(`http://localhost:8080/user/${username.value}/order`, config)
     .then((response) => response.json())
     .then((data) => {
       const list = document.createElement("ul");
