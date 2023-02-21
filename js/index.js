@@ -47,9 +47,9 @@ function placeOrder(reqBody, event) {
     .then((response) => response.json())
     .then((data) => {
       if (data.error) {
-        appendErrorMessage(list, data.error);
+        appendErrorMessage(data.error);
       } else {
-        appendOrderSummary(list, data);
+        appendOrderSummary(data);
       }
     })
     .catch((reason) => {
