@@ -23,21 +23,25 @@ function getOrderHistory(username) {
       if (data.error) {
         showErrorMessage(data);
       } else {
-        const message = document.createElement("p");
-        if (data.length == 0) {
-          message.innerText = "No orders placed";
-          successMessage.appendChild(message);
-        } else {
-          successMessage.appendChild(message);
-          message.innerText = "Order History";
-          const table = createTable(data);
-          successMessage.appendChild(table);
-        }
+        showSuccessResponse(data);
       }
     })
     .catch((reason) => {
       appendNetworkError(reason);
     });
+}
+
+function showSuccessResponse(data) {
+  const message = document.createElement("p");
+  if (data.length == 0) {
+    message.innerText = "No orders placed";
+    successMessage.appendChild(message);
+  } else {
+    successMessage.appendChild(message);
+    message.innerText = "Order History";
+    const table = createTable(data);
+    successMessage.appendChild(table);
+  }
 }
 
 function showErrorMessage(data) {
