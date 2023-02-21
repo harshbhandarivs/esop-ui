@@ -46,7 +46,6 @@ function placeOrder(reqBody, event) {
   })
     .then((response) => response.json())
     .then((data) => {
-      const list = document.createElement("ul");
       if (data.error) {
         appendErrorMessage(list, data.error);
       } else {
@@ -54,11 +53,12 @@ function placeOrder(reqBody, event) {
       }
     })
     .catch((reason) => {
-      console.log(reason);
+      appendNetworkError(reason);
     });
 }
 
-function appendErrorMessage(list, error) {
+function appendErrorMessage(error) {
+  const list = document.createElement("ul");
   const title = document.createElement("p");
   title.innerText = "Errors";
   title.style.fontWeight = 1000;
@@ -75,7 +75,8 @@ function appendErrorMessage(list, error) {
   errorMessage.appendChild(list);
 }
 
-function appendOrderSummary(list, data) {
+function appendOrderSummary(data) {
+  const list = document.createElement("ul");
   const message = document.createElement("p");
   message.innerText = "Order Placed Successfully!!";
   message.style.fontWeight = 1000;
@@ -99,4 +100,18 @@ function appendOrderSummary(list, data) {
   }
   list.style.paddingLeft = "16px";
   successMessage.appendChild(list);
+}
+
+function appendNetworkError(reason) {
+  const list = document.createElement("ul");
+  const title = document.createElement("p");
+  title.innerText = "Error";
+  title.style.fontWeight = 900;
+  title.style.paddingBottom = "15px";
+  errorMessage.appendChild(title);
+  const listElement = document.createElement("li");
+  listElement.innerText = reason.message;
+  list.appendChild(listElement);
+  list.style.paddingLeft = "16px";
+  errorMessage.appendChild(list);
 }
