@@ -1,3 +1,4 @@
+import "../css/main.css";
 const form = document.querySelector("#form");
 const successMessage = document.querySelector("#successMessage");
 const errorMessage = document.querySelector("#errorMessage");

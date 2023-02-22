@@ -1,3 +1,4 @@
+import "../css/main.css";
 const form = document.querySelector("#form");
 const successMessage = document.querySelector("#successMessage");
 const errorMessage = document.querySelector("#errorMessage");
@@ -53,6 +54,7 @@ function placeOrder(reqBody, event) {
       }
     })
     .catch((reason) => {
+      console.log(reason);
       appendNetworkError(reason);
     });
 }
@@ -85,7 +87,7 @@ function appendOrderSummary(data) {
   title.innerText = "Order Summary";
   title.style.fontWeight = 900;
   successMessage.append(message, title);
-  for (key in data) {
+  for (const key in data) {
     if (
       key == "orderID" ||
       key == "type" ||
