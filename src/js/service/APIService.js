@@ -6,6 +6,6 @@ export default class APIService {
   }
 
   placeRequest(url, config) {
-    return this.httpClient(url, config);
+    return this.httpClient.get(url, config);
   }
 }
