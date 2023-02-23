@@ -1,5 +1,7 @@
+import axios from "axios";
+
 export default class APIService {
-  constructor(httpClient) {
+  constructor(httpClient = axios) {
     this.httpClient = httpClient;
   }
 
